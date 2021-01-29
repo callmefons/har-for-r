@@ -1,7 +1,5 @@
-setwd("")
-dir("HASC_study")
 library(data.table)
-data = read.csv("HASC_study/2_walk/Perosn0101/hasc-130528-110507-acc.csv", header=F)
+data = read.csv("dataset/2_walk/Perosn0101/hasc-130528-110507-acc.csv", header=F)
 str(data) #     
 
 colnames(data) = c("sec", "x", "y", "z") #
@@ -10,7 +8,7 @@ summary(data)
 
 hist(diff(data$sec), col='blue',breaks=100);grid()
 
-path = "HASC_study"
+path = "dataset"
 df = lapply(dir(path)[3:8], function(act){ 
   print(act)
   path = paste(path,act,sep="/")
